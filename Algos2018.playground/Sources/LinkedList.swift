@@ -1,23 +1,6 @@
-//: Playground - noun: a place where people can play
+import Foundation
 
-import UIKit
-
-var str = "Hello, playground"
-
-class Node {
-
-    var next: Node?
-    weak var prev: Node?
-
-    var value: Int
-
-    init(value: Int) {
-        self.value = value
-    }
-}
-
-
-class LinkedList {
+public class LinkedList {
 
     private var head: Node?
 
@@ -25,6 +8,10 @@ class LinkedList {
 
     public var isEmpty: Bool {
         return head == nil
+    }
+
+    public init() {
+
     }
 
     public var first: Node? {
@@ -70,7 +57,7 @@ class LinkedList {
 
     public func removeNodeAtIndex(index: Int) {
 
-        var node = nodeAtIndex(index: index)
+        let node = nodeAtIndex(index: index)
 
         guard node != nil else {
             return
@@ -87,8 +74,8 @@ class LinkedList {
         }
 
 
-        var prevNode = node?.prev
-        var nextNode = node?.next
+        let prevNode = node?.prev
+        let nextNode = node?.next
 
         prevNode?.next = nextNode
         nextNode?.prev = prevNode
@@ -116,53 +103,3 @@ extension LinkedList: CustomStringConvertible {
         return text + "]"
     }
 }
-
-
-let mylinkedList = LinkedList()
-
-mylinkedList.append(10)
-mylinkedList.append(20)
-mylinkedList.append(30)
-mylinkedList.append(40)
-mylinkedList.append(50)
-mylinkedList.append(60)
-
-print(mylinkedList)
-var node = mylinkedList.nodeAtIndex(index: 0)
-//print(" Value is \(node?.value)")
-mylinkedList.removeNodeAtIndex(index: 5)
-print(mylinkedList)
-mylinkedList.append(70)
-print(mylinkedList)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
