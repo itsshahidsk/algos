@@ -1,10 +1,10 @@
 import Foundation
 
-public class LinkedList {
+public class LinkedList<T> {
 
-    private var head: Node?
+    private var head: Node<T>?
 
-    private var tail: Node?
+    private var tail: Node<T>?
 
     public var isEmpty: Bool {
         return head == nil
@@ -14,17 +14,17 @@ public class LinkedList {
 
     }
 
-    public var first: Node? {
+    public var first: Node<T>? {
         return head
     }
 
-    public var last: Node? {
+    public var last: Node<T>? {
         return tail
     }
 
-    public func append(_ value: Int) {
+    public func append(_ value: T) {
 
-        let newNode = Node(value: value)
+        let newNode = Node<T>(value: value)
 
         if let lastNode = tail {
             newNode.prev = lastNode
@@ -36,7 +36,7 @@ public class LinkedList {
         tail = newNode
     }
 
-    public func nodeAtIndex(index: Int) -> Node? {
+    public func nodeAtIndex(index: Int) -> Node<T>? {
 
         var i = 0
 

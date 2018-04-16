@@ -1,20 +1,20 @@
 import Foundation
 
-public class Queue {
+public class Queue<T> {
 
-    private var linkedList = LinkedList()
+    private var linkedList = LinkedList<T>.init()
 
-    public func enqueue(value: Int) {
+    public func enqueue(value: T) {
         linkedList.append(value)
     }
 
-    public func dequeue() -> Int? {
+    public func dequeue() -> T? {
         let value = linkedList.first?.value
         linkedList.removeNodeAtIndex(index: 0)
         return value
     }
 
-    public var first: Int? {
+    public var first: T? {
         return linkedList.first?.value
     }
 

@@ -4,21 +4,21 @@ import UIKit
 
 var str = "Hello, playground"
 
-let mylinkedList = LinkedList()
+let mylinkedList = LinkedList<String>.init()
 
-mylinkedList.append(10)
-mylinkedList.append(20)
-mylinkedList.append(30)
-mylinkedList.append(40)
-mylinkedList.append(50)
-mylinkedList.append(60)
+mylinkedList.append("s")
+mylinkedList.append("h")
+mylinkedList.append("a")
+mylinkedList.append("h")
+mylinkedList.append("i")
+mylinkedList.append("d")
 
 print(mylinkedList)
 var node = mylinkedList.nodeAtIndex(index: 0)
 //print(" Value is \(node?.value)")
 mylinkedList.removeNodeAtIndex(index: 5)
 print(mylinkedList)
-mylinkedList.append(70)
+mylinkedList.append("shaik")
 print(mylinkedList)
 
 

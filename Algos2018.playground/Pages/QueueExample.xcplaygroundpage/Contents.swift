@@ -8,7 +8,7 @@ var str = "Hello, playground"
 
 
 
-let myQueue = Queue()
+let myQueue = Queue<Int>.init()
 
 myQueue.enqueue(value: 10)
 myQueue.enqueue(value: 20)
